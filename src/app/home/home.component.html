@@ -5,4 +5,10 @@
     
     <img src="ranger.png" alt="" />
 
+   <div *ngIf="showAlert" class="popup-alert">
+        <button class="close-btn" (click)="closeAlert()">×</button>
+        <span>Bem-vindo, Admin</span>
+          <a routerLink="/dashboard" class="go-btn">Ir para o Dashboard</a>
+    </div>
+
 </div>
