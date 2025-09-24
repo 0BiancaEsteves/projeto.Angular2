@@ -5,17 +5,17 @@ import { VehicleData } from '../models/vehicleData.model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CarroVin } from '../utils/carroVinInterface';
-import {  Subscription } from 'rxjs';
-import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { MenuComponent } from "../menu/menu.component";
 
 @Component({
   selector: 'app-dashboard',
+  standalone: true,
   imports: [ReactiveFormsModule, CommonModule, MenuComponent],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   vehicles: Veiculo[] = [];
   selectedVehicle!: Veiculo;
   vehicleData!: VehicleData;
@@ -31,31 +31,31 @@ export class DashboardComponent implements OnInit {
     vin: new FormControl(''),
   });
 
-  onChange() {
+  constructor(private dashboardService: DashboardService) {}
+
+  ngOnInit(): void {
+    // Busca veículos da API
+    this.dashboardService.getVehicles().subscribe((res) => {
+      console.log('Veículos recebidos:', res.vehicles);
+      this.vehicles = res.vehicles;
+    });
+
+    // Quando o usuário seleciona um veículo
+    this.selectCarForms.controls.carId.valueChanges.subscribe((id) => {
+      this.selectedVehicle = this.vehicles.find(v => v.id === Number(id))!;
+    });
+
+    // Observa mudanças no VIN
     this.vinForm.controls.vin.valueChanges.subscribe((value) => {
-      this.reqVin = this.dashboardservice
-        .buscarVin(value as string)
+      this.reqVin = this.dashboardService.buscarVin(value as string)
         .subscribe((res) => {
           this.carVin = res;
         });
     });
   }
 
-  constructor(private dashboardservice: DashboardService) { }
-
-  ngOnInit(): void {
-    this.dashboardservice.getVehicles().subscribe((res) => {
-      console.log(res.vehicles);
-      this.vehicles = res.vehicles;
-    });
-    this.selectCarForms.controls.carId.valueChanges.subscribe((id) => {
-      this.selectedVehicle = this.vehicles[Number(id) - 1];
-    });
-    this.onChange();
+  ngOnDestroy(): void {
+    if (this.reqVin) this.reqVin.unsubscribe();
   }
-
-  // ngOnDestroy(): void {
-  //   this.reqVin.unsubscribe();
-  // }
-  }
+}
 
