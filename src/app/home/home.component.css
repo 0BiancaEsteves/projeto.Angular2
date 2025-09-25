@@ -69,18 +69,18 @@ justify-content: center;
 }
 
 .logout-btn {
-  background-color: #fff;
-  color: #1976d2;
+  background-color: transparent;
+  color: #ffff;
   margin-top: 10px;
-  border-color: none;
-  padding: 25px 110px; /* Aumenta o espaço interno (altura e largura) */
+  border-color: 2px solid white;
+  padding: 29px 110px; /* Aumenta o espaço interno (altura e largura) */
   font-size: 18px;     /* Tamanho do texto */
   min-width: 180px;    /* Largura mínima */
   height: 60px; 
 }
 
 .logout-btn:hover {
-  background-color: #1976d2;
-  color: white;
+  background-color: white;
+  color: #1976d2;
 }
 
