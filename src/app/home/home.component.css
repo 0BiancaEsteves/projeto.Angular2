@@ -26,7 +26,7 @@ justify-content: center;
 }
 
 .popup-alert span {
-  font-size: 35px; /* Tamanho do texto "Bem-vindo, Admin" */
+  font-size: 35px; /* Tamanho do texto "Bem-vindo!" */
   font-weight: bold;
   display: block;
   margin-top: 20px;
