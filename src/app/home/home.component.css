@@ -15,8 +15,8 @@ justify-content: center;
   border-radius: 5px; /* Arredonda os cantos */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000; /* Fica acima de outros elementos */
-  width: 550px; /* Largura do popup */
-  height: 250px; /* Altura do popup */
+  width: 555px; /* Largura do popup */
+  height: 260px; /* Altura do popup */
   display: flex;
   flex-direction: column; /* Alinha elementos verticalmente */
   justify-content: space-between; /* Empurra o botão para baixo */
@@ -51,7 +51,7 @@ justify-content: center;
 .go-btn {
   padding: 15px 50px; /* Espaço interno do botão */
   background-color: transparent;
-  color: white; 
+  color: #fff; 
   border: 2px solid white; /* Sobre a borda */
   text-decoration: none;
   border-radius: 15px; 
@@ -67,3 +67,20 @@ justify-content: center;
   background-color: white; 
   color: #1976d2;
 }
+
+.logout-btn {
+  background-color: #fff;
+  color: #1976d2;
+  margin-top: 10px;
+  border-color: none;
+  padding: 25px 110px; /* Aumenta o espaço interno (altura e largura) */
+  font-size: 18px;     /* Tamanho do texto */
+  min-width: 180px;    /* Largura mínima */
+  height: 60px; 
+}
+
+.logout-btn:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
