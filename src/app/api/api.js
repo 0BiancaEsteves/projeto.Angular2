@@ -47,6 +47,7 @@ app.get("/vehicles", (req, res) => {
             {
                 id: 1,
                 vehicle: "Ranger",
+                vin: "2FRHDUYS2Y63NHD22454",
                 volumetotal: 145760,
                 connected: 70000,
                 softwareUpdates: 27550,
@@ -55,6 +56,7 @@ app.get("/vehicles", (req, res) => {
             {
                 id: 2,
                 vehicle: "Mustang",
+                vin: "2RFAASDY54E4HDU34874",
                 volumetotal: 1500,
                 connected: 500,
                 softwareUpdates: 750,
@@ -63,6 +65,7 @@ app.get("/vehicles", (req, res) => {
             {
                 id: 3,
                 vehicle: "Territory",
+                vin: "2FRHDUYS2Y63NHD22455",
                 volumetotal: 4560,
                 connected: 4000,
                 softwareUpdates: 3050,
@@ -71,6 +74,7 @@ app.get("/vehicles", (req, res) => {
             {
                 id: 4,
                 vehicle: "Bronco Sport",
+                vin: "2RFAASDY54E4HDU34875", 
                 volumetotal: 7560,
                 connected: 4060,
                 softwareUpdates: 2050,
