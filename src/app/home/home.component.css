@@ -1,32 +1,48 @@
-.imagem{
-margin-top: 10% ;
-display: flex;
-justify-content: center;
+/* Container com imagem e popup */
+.imagem {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Imagem responsiva */
+.imagem img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Popup centralizado e responsivo */
 .popup-alert {
-  position: fixed; /* Deixa sobreposto à página */
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centraliza no meio da tela */
-  background: #1976d2; 
+  transform: translate(-50%, -50%);
+  background: #1976d2;
   color: white;
   padding: 20px;
-  border-radius: 5px; /* Arredonda os cantos */
+  border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Fica acima de outros elementos */
-  width: 555px; /* Largura do popup */
-  height: 260px; /* Altura do popup */
+  z-index: 1000;
+
+  /* Responsividade */
+  width: 90%;
+  max-width: 555px;
+  max-height: 90vh;
+  overflow-y: auto;
+
   display: flex;
-  flex-direction: column; /* Alinha elementos verticalmente */
-  justify-content: space-between; /* Empurra o botão para baixo */
-  align-items: center; /* Centraliza horizontalmente */
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  font-size: 20px; /* Tamanho do texto */
+  font-size: 20px;
 }
 
 .popup-alert span {
-  font-size: 35px; /* Tamanho do texto "Bem-vindo!" */
+  font-size: 35px;
   font-weight: bold;
   display: block;
   margin-top: 20px;
@@ -39,48 +55,80 @@ justify-content: center;
   background: transparent;
   border: none;
   color: white;
-  font-size: 35px; /* Tamanho do 'X' */
+  font-size: 35px;
   cursor: pointer;
   line-height: 1;
 }
 
 .close-btn:hover {
-  color: #ccc; 
+  color: #ccc;
 }
 
 .go-btn {
-  padding: 15px 50px; /* Espaço interno do botão */
+  padding: 15px 30px;
   background-color: transparent;
-  color: #fff; 
-  border: 2px solid white; /* Sobre a borda */
+  color: #fff;
+  border: 2px solid white;
   text-decoration: none;
-  border-radius: 15px; 
+  border-radius: 15px;
   font-weight: bold;
-  transition: all 0.3s ease; /* transição ao passar o mouse */
-  min-width: 150px; /* Largura mínima */
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 .go-btn:hover {
-  background-color: white; 
+  background-color: white;
   color: #1976d2;
 }
 
 .logout-btn {
   background-color: transparent;
-  color: #ffff;
+  color: #fff;
+  border: 2px solid white;
+  font-size: 16px;
+  padding: 15px 30px;
+  height: auto;
+  width: 100%;
+  max-width: 300px;
   margin-top: 10px;
-  border-color: 2px solid white;
-  padding: 29px 110px; /* Aumenta o espaço interno (altura e largura) */
-  font-size: 18px;     /* Tamanho do texto */
-  min-width: 180px;    /* Largura mínima */
-  height: 60px; 
 }
 
 .logout-btn:hover {
   background-color: white;
   color: #1976d2;
+}
+
+/* 🧠 Responsividade para telas pequenas */
+@media (max-width: 480px) {
+  .popup-alert {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .popup-alert span {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .go-btn,
+  .logout-btn {
+    padding: 12px 16px;
+    font-size: 15px;
+    max-width: none;
+  }
+
+  .close-btn {
+    font-size: 28px;
+  }
+
+  .imagem img {
+    max-width: 90%;
+  }
 }
 
