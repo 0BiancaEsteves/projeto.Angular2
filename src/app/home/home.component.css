@@ -1,4 +1,3 @@
-/* Container com imagem e popup */
 .imagem {
   margin-top: 10%;
   display: flex;
@@ -15,7 +14,6 @@
   margin-bottom: 20px;
 }
 
-/* Popup centralizado e responsivo */
 .popup-alert {
   position: fixed;
   top: 50%;
@@ -104,7 +102,7 @@
   color: #1976d2;
 }
 
-/* 🧠 Responsividade para telas pequenas */
+/*Responsividade para telas pequenas */
 @media (max-width: 480px) {
   .popup-alert {
     padding: 15px;
